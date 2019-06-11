@@ -5,3 +5,80 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+if Rails.env.development?
+  puts "deleting database"
+  Coupon.destroy_all
+  Company.destroy_all
+  Category.destroy_all
+  User.destroy_all
+end
+
+user1 = User.create!( email: 'user1@user.com',
+                     password: '123456'
+                     )
+user2 = User.create!( email: 'user2@user.com',
+                     password: '123456'
+                     )
+user3 = User.create!( email: 'user3@user.com',
+                      password: '123456'
+                      )
+
+food = Category.create!( name: 'Food' )
+cinema = Category.create!( name: 'Cinema' )
+fashion = Category.create!( name: 'Fashion' )
+
+ubereats = Company.create!( name: 'Uber Eats',
+                            category: food
+                          )
+
+iFood = Company.create!( name: 'iFood',
+                         category: food
+                         )
+
+kinoplex = Company.create!( name: 'Kinoplex',
+                            category: cinema
+                            )
+
+
+coupon1 = Coupon.create!( description: '10R$ - for every purchase >20R$',
+                           expiration_date: Date.today + (1..100).to_a.sample,
+                           code: 'ABCD',
+                           company: ubereats,
+                           user: user1
+                           )
+
+coupon2 = Coupon.create!( description: '20R$ -  General',
+                           expiration_date: Date.today + (1..100).to_a.sample,
+                           code: 'ABCD',
+                           company: iFood,
+                           user: user2
+                           )
+
+
+coupon3 = Coupon.create!( description: '30R$ - minimium spending 50R$',
+                           expiration_date: Date.today + (1..100).to_a.sample,
+                           code: 'ABCD',
+                           company: ubereats,
+                           user: user2
+                           )
+
+coupon4 = Coupon.create!( description: 'Free Delivery - Only Lunch',
+                           expiration_date: Date.today + (1..100).to_a.sample,
+                           code: 'ABCD',
+                           company: iFood,
+                           user: user1
+                           )
+
+coupon5 = Coupon.create!( description: '5R$ - Avengers',
+                           expiration_date: Date.today + (1..100).to_a.sample,
+                           code: 'ABCD',
+                           company: kinoplex,
+                           user: user3
+                           )
+
+coupon6 = Coupon.create!( description: '10R$ - Avengers',
+                           expiration_date: Date.today + (1..100).to_a.sample,
+                           code: 'ABCD',
+                           company: kinoplex,
+                           user: user2
+                           )
