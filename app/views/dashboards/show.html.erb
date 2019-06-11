@@ -1,7 +1,26 @@
-<h1>Dashboards#show</h1>
-  <p>
-  <%= link_to 'Import coupons', new_import_path, class: "btn-primary" %>
-  </p>
-  <p>
-  <%= link_to 'Add a coupon', new_coupon_path, class: "btn-primary" %>
-  </p>
+<h1>DASHBOARD - My coupons</h1>
+
+  <div class="card p-3 m-3">
+    <h2>MY COUPONS</h2>
+      <ul>
+        <% @user.coupons.each do |coupon| %>
+          <li>Coupon: <%= coupon.description %></li>
+          <li>Expiration date: <%= coupon.expiration_date %></li>
+          <li>Code: <%= coupon.code %></li>
+
+            <p><%= link_to "Delete", coupon_path(coupon),
+              method: :delete,
+              data: { confirm: "Are you sure?" } %></p>
+        <% end %>
+      </ul>
+
+      <p>
+        <%= link_to 'Import coupons', new_import_path, class: "btn-primary" %>
+      </p>
+      <p>
+        <%= link_to 'Add a coupon', new_coupon_path, class: "btn-primary" %>
+      </p>
+  </div>
+
+
+

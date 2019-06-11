@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :pages, only: [:home]
 
-  resources :coupons, only: [:new, :create]
+  resources :coupons, only: [:new, :create, :destroy]
 
   get "dashboard", to: "dashboards#show", as: :dashboard
 
