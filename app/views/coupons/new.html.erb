@@ -1,2 +1,14 @@
-<h1>Coupons#new</h1>
-<p>Find me in app/views/coupons/new.html.erb</p>
+<div class="container">
+  <div class="card p-3 m-3">
+    <h1>New Coupon</h1>
+
+    <%= simple_form_for [@coupon] do |f| %>
+
+      <%= f.input :description, label: 'Description of your code' %>
+      <%= f.input :code, label: 'Write here your code' %>
+      <%= f.input :expiration_date, label: 'When does your code expire?', html5: true, as: :date%>
+
+      <%= f.submit "Create a new coupon", class: "btn btn-warning m-3" %>
+    <% end %>
+  </div>
+</div>

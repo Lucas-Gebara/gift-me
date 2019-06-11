@@ -8,7 +8,7 @@ class CouponsController < ApplicationController
     @user = current_user
     @coupon = Coupon.new(coupon_params)
     if @coupon.save
-      redirect_to dashboard_path(@user.id)
+      redirect_to root_path
     else
       render :new
     end
