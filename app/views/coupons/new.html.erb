@@ -4,8 +4,9 @@
 
     <%= simple_form_for [@coupon] do |f| %>
 
-      <%= f.input :description, label: 'Description of your code' %>
-      <%= f.input :code, label: 'Write here your code' %>
+      <%= f.input :description, label: 'Description of your code:' %>
+      <%= f.association :company %>
+      <%= f.input :code, label: 'Write here your code:' %>
       <%= f.input :expiration_date, label: 'When does your code expire?', html5: true, as: :date%>
 
       <%= f.submit "Create a new coupon", class: "btn btn-warning m-3" %>
