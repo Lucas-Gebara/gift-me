@@ -8,9 +8,13 @@ Rails.application.routes.draw do
 
   resources :coupons, only: [:new, :create]
 
-  resources :dashboards, only: [:show]
+  get "dashboard", to: "dashboards#show", as: :dashboard
 
   resources :imports, only: [:new, :create]
+
+  namespace :user do
+    root :to => "welcome#index"
+  end
 
 end
 
