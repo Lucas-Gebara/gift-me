@@ -47,38 +47,40 @@ coupon1 = Coupon.create!( description: '10R$ - for every purchase >20R$',
                            user: user1
                            )
 
-coupon2 = Coupon.create!( description: '20R$ -  General',
+coupon2 = Coupon.create!(  description: '20R$ -  General',
                            expiration_date: Date.today + (1..100).to_a.sample,
-                           code: 'ABCD',
-                           company: iFood,
+                           code: '83830k',
+                           company: iFood
                            user: user2
                            )
 
 
 coupon3 = Coupon.create!( description: '30R$ - minimium spending 50R$',
                            expiration_date: Date.today + (1..100).to_a.sample,
-                           code: 'ABCD',
-                           company: ubereats,
-                           user: user2
+                           code: '12H2P',
+                           company: ubereats
+                           user: user3
                            )
 
 coupon4 = Coupon.create!( description: 'Free Delivery - Only Lunch',
                            expiration_date: Date.today + (1..100).to_a.sample,
-                           code: 'ABCD',
-                           company: iFood,
-                           user: user1
+                           code: 'BBBB',
+                           company: iFood
+                           user: user2
                            )
 
 coupon5 = Coupon.create!( description: '5R$ - Avengers',
                            expiration_date: Date.today + (1..100).to_a.sample,
-                           code: 'ABCD',
+                           code: 'ZZZ',
                            company: kinoplex,
+                           user: user1
+                           )
+
+coupon6 = Coupon.create!( description: '10R$ - Aladdin',
+                           expiration_date: Date.today + (1..100).to_a.sample,
+                           code: 'ADDD',
+                           company: kinoplex
                            user: user3
                            )
 
-coupon6 = Coupon.create!( description: '10R$ - Avengers',
-                           expiration_date: Date.today + (1..100).to_a.sample,
-                           code: 'ABCD',
-                           company: kinoplex,
-                           user: user2
-                           )
+
