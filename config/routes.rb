@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
-  get 'dashboards/show'
-  get 'imports/new'
-  get 'imports/create'
-  get 'coupons/new'
-  get 'coupons/create'
+
+  root to: "pages#home"
+
   devise_for :users
-  root to: 'pages#home'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  resources :pages, only: [:home]
+
+  resources :coupons, only: [:new, :create]
+
+  resources :dashboards, only: [:show]
+
+  resources :imports, only: [:new, :create]
+
 end
+
