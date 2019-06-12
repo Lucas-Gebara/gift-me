@@ -5,7 +5,7 @@ class CouponsImportsController < ApplicationController
 
   def create
     @coupons_import = CouponsImport.new(coupons_import_params)
-    raise
+    @coupons_import.user = current_user
     if @coupons_import.save
       redirect_to dashboard_path
     else
