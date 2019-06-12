@@ -5,18 +5,22 @@
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <div class="form-post">
-        <h1>Write a post</h1>
 
-
+        <h2>User info</h2>
 
         <form>
           <label>Email:</label>
           <input type="email" name="">
+
+          <p></p>
+
           <label>Password:</label>
           <input type="password" name="">
         </form>
 
+        <p></p>
 
+        <h2>Select apps</h2>
 
         <%= simple_form_for(@coupons_import) do |f| %>
           <%= f.input :companies, as: :check_boxes, collection: Company.all, include_hidden: false %>
