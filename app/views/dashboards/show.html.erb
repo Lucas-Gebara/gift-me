@@ -4,6 +4,7 @@
     <h2>My coupons</h2>
       <ul>
         <% @user.coupons.each do |coupon| %>
+          <li><%= image_tag "#{coupon.company.slug}_logo.jpg" %></li>
           <li>Coupon: <%= coupon.description %></li>
           <li>Expiration date: <%= coupon.expiration_date %></li>
           <li>Code: <%= coupon.code %></li>
