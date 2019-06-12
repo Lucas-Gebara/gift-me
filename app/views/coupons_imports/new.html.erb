@@ -1,5 +1,4 @@
-<h1>Imports#new</h1>
-<p>Find me in app/views/imports/new.html.erb</p>
+<h1>New Import</h1>
 
 
 <div class="container">
@@ -7,9 +6,21 @@
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <div class="form-post">
         <h1>Write a post</h1>
+
+
+
+        <form>
+          <label>Email:</label>
+          <input type="email" name="">
+          <label>Password:</label>
+          <input type="password" name="">
+        </form>
+
+
+
         <%= simple_form_for(@coupons_import) do |f| %>
           <%= f.input :companies, as: :check_boxes, collection: Company.all, include_hidden: false %>
-          <%= f.submit "Save", class: "btn btn-primary"  %>
+          <%= f.submit "Import", class: "btn btn-primary"  %>
         <% end %>
       </div>
     </div>
