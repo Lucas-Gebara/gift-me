@@ -1,4 +1,17 @@
 <h1>DASHBOARD</h1>
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Launch demo modal
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <%= render 'coupons_imports/form', coupons_import: @coupons_import %>
+      </div>
+    </div>
+  </div>
 
   <div class="card p-3 m-3">
     <h2>My coupons</h2>

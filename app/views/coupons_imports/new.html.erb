@@ -21,11 +21,7 @@
         <p></p>
 
         <h2>Select apps</h2>
-
-        <%= simple_form_for(@coupons_import) do |f| %>
-          <%= f.input :companies, as: :check_boxes, collection: Company.all, include_hidden: false %>
-          <%= f.submit "Import", class: "btn btn-primary"  %>
-        <% end %>
+        <%= render 'form', coupons_import: @coupons_import %>
       </div>
     </div>
   </div>
