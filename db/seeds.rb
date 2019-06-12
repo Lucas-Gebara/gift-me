@@ -6,12 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 if Rails.env.development?
-  puts "deleting database"
+  puts "Deleting database..."
   Coupon.destroy_all
   Company.destroy_all
   Category.destroy_all
   User.destroy_all
 end
+
+puts "Creating users..."
 
 user1 = User.create!( email: 'user1@user.com',
                      password: '123456'
@@ -23,9 +25,13 @@ user3 = User.create!( email: 'user3@user.com',
                       password: '123456'
                       )
 
+puts "Creating categories..."
+
 food = Category.create!( name: 'Food' )
 cinema = Category.create!( name: 'Cinema' )
 fashion = Category.create!( name: 'Fashion' )
+
+puts "Creating companies..."
 
 ubereats = Company.create!( name: 'Uber Eats',
                             category: food
@@ -39,6 +45,7 @@ kinoplex = Company.create!( name: 'Kinoplex',
                             category: cinema
                             )
 
+puts "Creating coupons..."
 
 coupon1 = Coupon.create!( description: '10R$ - for every purchase >20R$',
                            expiration_date: Date.today + (1..100).to_a.sample,
@@ -82,3 +89,4 @@ coupon6 = Coupon.create!( description: '10R$ - Avengers',
                            company: kinoplex,
                            user: user2
                            )
+puts "Seed complete!"
