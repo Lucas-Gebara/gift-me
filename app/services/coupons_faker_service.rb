@@ -8,7 +8,7 @@ class CouponsFakerService
         description: "#{rand(5..50)}% of discount",
         company: company,
         code: Faker::Code.nric,
-        expiration_date: Faker::Date.between(Date.today, 1.month.from_now).strftime('%m/%d/%Y')
+        expiration_date: Date.today + rand(30)
       )
       coupons << coupon
     end
