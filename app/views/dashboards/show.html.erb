@@ -1,7 +1,6 @@
-<h1>DASHBOARD - My coupons</h1>
-
-  <div class="card p-3 m-3">
     <h2>MY COUPONS</h2>
+        <%= link_to 'Import coupons', new_import_path, class: "btn btn-primary" %>
+        <%= link_to 'Add a coupon', new_coupon_path, class: "btn btn-primary" %>
       <ul>
         <% @user.coupons.each do |coupon| %>
           <li>Coupon: <%= coupon.description %></li>
@@ -14,13 +13,6 @@
         <% end %>
       </ul>
 
-      <p>
-        <%= link_to 'Import coupons', new_import_path, class: "btn-primary" %>
-      </p>
-      <p>
-        <%= link_to 'Add a coupon', new_coupon_path, class: "btn-primary" %>
-      </p>
-  </div>
 
 
 
