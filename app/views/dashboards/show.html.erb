@@ -18,7 +18,6 @@
     </div>
   </div>
 
-
 <div class="container">
     <!-- Coupons display -->
 
@@ -32,13 +31,16 @@
                 <p><%= coupon.description %></p>
                 <p>Expiration date: <%= coupon.expiration_date %></p>
                 <p>Code: <%= coupon.code %></p>
+                <%= link_to 'Use this Coupon', coupon.url, class: "btn-primary" %>
+                <%= link_to "Delete", coupon_path(coupon), class: "btn-primary",
+                method: :delete,
+                data: { confirm: "Are you sure?" } %>
               </div>
 
             </div>
 
           <% end %>
 </div>
-
 
 
 
