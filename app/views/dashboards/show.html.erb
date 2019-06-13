@@ -1,17 +1,44 @@
-    <h2>MY COUPONS</h2>
-        <%= link_to 'Import coupons', new_import_path, class: "btn btn-primary" %>
-        <%= link_to 'Add a coupon', new_coupon_path, class: "btn btn-primary" %>
-      <ul>
-        <% @user.coupons.each do |coupon| %>
-          <li>Coupon: <%= coupon.description %></li>
-          <li>Expiration date: <%= coupon.expiration_date %></li>
-          <li>Code: <%= coupon.code %></li>
 
-            <p><%= link_to "Delete", coupon_path(coupon),
-              method: :delete,
-              data: { confirm: "Are you sure?" } %></p>
-        <% end %>
-      </ul>
+
+  <h2>MY COUPONS</h2>
+
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Launch demo modal
+  </button>
+
+  <%= link_to 'Add a coupon', new_coupon_path, class: "btn btn-primary" %>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <%= render 'coupons_imports/form', coupons_import: @coupons_import %>
+      </div>
+    </div>
+  </div>
+
+
+<div class="container">
+    <!-- Coupons display -->
+
+          <% @user.coupons.each do |coupon| %>
+
+            <div class="gift-me-card">
+              <div class="text-center img-float">
+                <%= image_tag "#{coupon.company.slug}_logo.jpg", :class => 'company-logo'%>
+              </div>
+              <div class="p-2">
+                <p><%= coupon.description %></p>
+                <p>Expiration date: <%= coupon.expiration_date %></p>
+                <p>Code: <%= coupon.code %></p>
+              </div>
+
+            </div>
+
+          <% end %>
+</div>
+
 
 
 
