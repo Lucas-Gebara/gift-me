@@ -5,7 +5,7 @@ class CouponsFakerService
     company = Company.find(company_id)
     rand(1..3).times do
       coupon = Coupon.new(
-        description: "#{rand(5..50)}%",
+        description: ["#{rand(5..50)}% of discount", "R$ #{rand(5..30)} of discount"].sample,
         company: company,
         code: Faker::Code.nric,
         expiration_date: Date.today + rand(30)
