@@ -1,4 +1,4 @@
-<%= simple_form_for(coupons_import) do |f| %>
-  <%= f.input :companies, as: :check_boxes, collection: Company.all, include_hidden: false %>
-  <%= f.submit "Import", class: "btn btn-primary"  %>
+<%= simple_form_for coupons_import, html: { class: "transparent" } do |f| %>
+ <%= f.input :companies, as: :check_boxes, collection: Company.all, include_hidden: false %>
+  <%= f.submit "Import", class: "btn btn-primary", id: "submit-icon"  %>
 <% end %>
