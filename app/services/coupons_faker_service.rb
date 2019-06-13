@@ -3,7 +3,7 @@ class CouponsFakerService
 
     coupons = []
     company = Company.find(company_id)
-    rand(10..15).times do
+    rand(1..3).times do
       coupon = Coupon.new(
         description: "#{rand(5..50)}% of discount",
         company: company,
