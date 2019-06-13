@@ -1,8 +1,13 @@
-<h1>DASHBOARD</h1>
+
+
+  <h2>MY COUPONS</h2>
+
   <!-- Button trigger modal -->
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
     Launch demo modal
   </button>
+
+  <%= link_to 'Add a coupon', new_coupon_path, class: "btn btn-primary" %>
 
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -13,36 +18,30 @@
     </div>
   </div>
 
- <div class="card p-3 m-3">
-  <h2>My coupons</h2>
-   <ul>
-    <% @user.coupons.each do |coupon| %>
-     <li><%= image_tag "#{coupon.company.slug}_logo.jpg" %></li>
-     <li>Coupon: <%= coupon.description %></li>
-     <li>Expiration date: <%= coupon.expiration_date %></li>
-     <li>Code: <%= coupon.code %></li>
+<div class="container">
+    <!-- Coupons display -->
 
-     <p>
-      <%= link_to 'Use this Coupon', coupon.url, class: "btn-primary" %>
-     </p>
-​
-     <p>
-      <%= link_to "Delete", coupon_path(coupon), class: "btn-primary",
-       method: :delete,
-       data: { confirm: "Are you sure?" } %>
-     </p>
+          <% @user.coupons.each do |coupon| %>
 
-    <% end %>
-   </ul>
+            <div class="gift-me-card">
+              <div class="text-center img-float">
+                <%= image_tag "#{coupon.company.slug}_logo.jpg", :class => 'company-logo'%>
+              </div>
+              <div class="p-2">
+                <p><%= coupon.description %></p>
+                <p>Expiration date: <%= coupon.expiration_date %></p>
+                <p>Code: <%= coupon.code %></p>
+                <%= link_to 'Use this Coupon', coupon.url, class: "btn-primary" %>
+                <%= link_to "Delete", coupon_path(coupon), class: "btn-primary",
+                method: :delete,
+                data: { confirm: "Are you sure?" } %>
+              </div>
 
+            </div>
 
-      <p>
-        <%= link_to 'Import coupons', new_coupons_import_path, class: "btn-primary" %>
-      </p>
-      <p>
-        <%= link_to 'Add a coupon', new_coupon_path, class: "btn-primary" %>
-      </p>
-  </div>
+          <% end %>
+</div>
+
 
 
 
