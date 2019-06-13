@@ -13,20 +13,28 @@
     </div>
   </div>
 
-  <div class="card p-3 m-3">
-    <h2>My coupons</h2>
-      <ul>
-        <% @user.coupons.each do |coupon| %>
-          <li><%= image_tag "#{coupon.company.slug}_logo.jpg" %></li>
-          <li>Coupon: <%= coupon.description %></li>
-          <li>Expiration date: <%= coupon.expiration_date %></li>
-          <li>Code: <%= coupon.code %></li>
+ <div class="card p-3 m-3">
+  <h2>My coupons</h2>
+   <ul>
+    <% @user.coupons.each do |coupon| %>
+     <li><%= image_tag "#{coupon.company.slug}_logo.jpg" %></li>
+     <li>Coupon: <%= coupon.description %></li>
+     <li>Expiration date: <%= coupon.expiration_date %></li>
+     <li>Code: <%= coupon.code %></li>
 
-            <p><%= link_to "Delete", coupon_path(coupon),
-              method: :delete,
-              data: { confirm: "Are you sure?" } %></p>
-        <% end %>
-      </ul>
+     <p>
+      <%= link_to 'Use this Coupon', coupon.url, class: "btn-primary" %>
+     </p>
+​
+     <p>
+      <%= link_to "Delete", coupon_path(coupon), class: "btn-primary",
+       method: :delete,
+       data: { confirm: "Are you sure?" } %>
+     </p>
+
+    <% end %>
+   </ul>
+
 
       <p>
         <%= link_to 'Import coupons', new_coupons_import_path, class: "btn-primary" %>
