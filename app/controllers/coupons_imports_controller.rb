@@ -16,7 +16,7 @@ class CouponsImportsController < ApplicationController
   private
 
   def coupons_import_params
-    params.require(:coupons_import).permit(companies: [])
+    params.fetch(:coupons_import, {}).permit(companies: [])
   end
 end
 
