@@ -1,14 +1,16 @@
 
+<div class="container">
+  <div class="text-center">
 
   <h2>MY COUPONS</h2>
 
   <!-- Button trigger modal -->
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    Import coupons!
+    Import coupons
   </button>
 
   <%= link_to 'Add a coupon', new_coupon_path, class: "btn btn-primary" %>
-
+</div>
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -18,7 +20,6 @@
     </div>
   </div>
 
-<div class="container">
     <!-- Coupons display -->
 
           <% @user.coupons.each do |coupon| %>
