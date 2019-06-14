@@ -26,15 +26,19 @@
             <div class="gift-me-card">
               <div class="text-center img-float">
                 <%= image_tag "#{coupon.company.slug}_logo.jpg", :class => 'company-logo'%>
+
+
               </div>
-              <div class="p-2">
-                <p><%= coupon.description %></p>
+              <div>
+
+                <%= link_to coupon_path(coupon),method: :delete, data: { confirm: "Are you sure?" } do  %>
+                  <%= image_tag "https://image.flaticon.com/icons/svg/63/63260.svg", class: 'trash-icon-logo' %>
+                <% end %>
+
+                <h3><%= coupon.description %></h3>
                 <p>Expiration date: <%= coupon.expiration_date %></p>
                 <p>Code: <%= coupon.code %></p>
-                <%= link_to 'Use this Coupon', coupon.url, class: "btn-primary" %>
-                <%= link_to "Delete", coupon_path(coupon), class: "btn-primary",
-                method: :delete,
-                data: { confirm: "Are you sure?" } %>
+                <%= link_to 'Use this Coupon', coupon.url, class: "btn btn-primary" %>
               </div>
 
             </div>
