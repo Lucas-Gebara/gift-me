@@ -14,6 +14,7 @@ const sortableListInit = () => {
     if(filters) {
       filters.forEach((filter) => {
         filter.addEventListener("click", () => {
+          elem.style.display = "block";
           iso.arrange({ filter: `.${filter.dataset.filter}` })
         })
       })
@@ -21,5 +22,11 @@ const sortableListInit = () => {
   }
 }
 
+const disableLegend = () => {
+ if(document.querySelector("#new_coupons_import").querySelector("legend")){
+  document.querySelector("#new_coupons_import").querySelector("legend").style.display = "none"
+}
+}
 
+export {disableLegend}
 export {sortableListInit}

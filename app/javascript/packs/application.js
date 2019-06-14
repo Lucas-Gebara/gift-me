@@ -1,5 +1,6 @@
 import "bootstrap";
 import {sortableListInit} from "../components/sortable_list.js";
+import {disableLegend} from "../components/sortable_list.js";
 
 const checkboxes = document.querySelectorAll(".form-check-input")
 // console.log(checkboxes)
@@ -27,3 +28,4 @@ document.querySelectorAll(".clickable-icon").forEach((icon)=>{
 });
 
 sortableListInit();
+disableLegend();

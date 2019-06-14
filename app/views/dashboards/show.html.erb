@@ -1,24 +1,25 @@
 
+<div class="container">
+  <div class="text-center">
 
   <h2>MY COUPONS</h2>
 
   <!-- Button trigger modal -->
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    Launch demo modal
+    Import coupons
   </button>
 
   <%= link_to 'Add a coupon', new_coupon_path, class: "btn btn-primary" %>
-
+</div>
   <!-- Modal -->
-  <%= render 'coupons_imports/form', coupons_import: @coupons_import %>
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
+        <%= render 'coupons_imports/form', coupons_import: @coupons_import %>
       </div>
     </div>
   </div>
 
-<div class="container">
     <!-- Coupons display -->
 
           <% @user.coupons.each do |coupon| %>
