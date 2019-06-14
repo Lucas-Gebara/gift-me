@@ -41,9 +41,13 @@ iFood = Company.create!( name: 'iFood',
                          category: food
                          )
 
-kinoplex = Company.create!( name: 'Kinoplex',
-                            category: cinema
+rappi = Company.create!( name: 'Rappi',
+                            category: food
                             )
+
+# kinoplex = Company.create!( name: 'Kinoplex',
+#                             category: cinema
+#                             )
 
 puts "Creating coupons..."
 
@@ -76,17 +80,17 @@ coupon4 = Coupon.create!( description: 'Free Delivery - Only Lunch',
                            user: user1
                            )
 
-coupon5 = Coupon.create!( description: '5R$ - Avengers',
-                           expiration_date: Date.today + (1..100).to_a.sample,
-                           code: 'ABCD',
-                           company: kinoplex,
-                           user: user3
-                           )
+# coupon5 = Coupon.create!( description: '5R$ - Avengers',
+#                            expiration_date: Date.today + (1..100).to_a.sample,
+#                            code: 'ABCD',
+#                            company: kinoplex,
+#                            user: user3
+#                            )
 
-coupon6 = Coupon.create!( description: '10R$ - Avengers',
-                           expiration_date: Date.today + (1..100).to_a.sample,
-                           code: 'ABCD',
-                           company: kinoplex,
-                           user: user2
-                           )
+# coupon6 = Coupon.create!( description: '10R$ - Avengers',
+#                            expiration_date: Date.today + (1..100).to_a.sample,
+#                            code: 'ABCD',
+#                            company: kinoplex,
+#                            user: user2
+#                            )
 puts "Seed complete!"
