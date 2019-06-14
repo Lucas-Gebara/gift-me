@@ -13,6 +13,8 @@ class Coupon < ApplicationRecord
       "http://www.ubereats.com/pt-BR/"
     when "kinoplex"
       "http://www.kinoplex.com.br"
+    when "rappi"
+      "http://www.rappi.com.br"
     end
   end
 end
