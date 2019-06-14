@@ -17,6 +17,8 @@ class Coupon < ApplicationRecord
       "http://www.kinoplex.com.br"
     when "rappi"
       "http://www.rappi.com.br"
+    when "cinemark"
+      "http://www.cinemark.com.br"
     end
   end
 end
