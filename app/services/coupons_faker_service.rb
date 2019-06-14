@@ -1,6 +1,5 @@
 class CouponsFakerService
   def import(company_id)
-
     coupons = []
     company = Company.find(company_id)
     rand(1..3).times do
