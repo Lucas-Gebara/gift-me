@@ -1,6 +1,14 @@
 
 <div class="background-image display-fullscreen">
+
   <div class="row justify-content-center">
+    <%= link_to new_user_session_path do%>
+      <%= image_tag "Framegiftme_logo.jpg", class: 'logo-signin'%>
+    <% end %>
+  </div>
+
+  <div class="row justify-content-center">
+
 
     <div class="gift-me-btn">
       <%= link_to 'Sign in', new_user_session_path, class: "btn btn-primary" %>
