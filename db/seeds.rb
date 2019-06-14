@@ -54,12 +54,7 @@ cinemark = Company.create!( name: 'Cinemark',
 
 puts "Creating coupons..."
 
-coupon1 = Coupon.create!( description: '10R$ - for every purchase >20R$',
-                           expiration_date: Date.today + (1..100).to_a.sample,
-                           code: 'ABCD',
-                           company: ubereats,
-                           user: user1
-                           )
+
 
 coupon2 = Coupon.create!( description: '20R$ -  General',
                            expiration_date: Date.today + (1..100).to_a.sample,
@@ -76,12 +71,7 @@ coupon3 = Coupon.create!( description: '30R$ - minimium spending 50R$',
                            user: user2
                            )
 
-coupon4 = Coupon.create!( description: 'Free Delivery - Only Lunch',
-                           expiration_date: Date.today + (1..100).to_a.sample,
-                           code: 'ABCD',
-                           company: iFood,
-                           user: user1
-                           )
+
 
 # coupon5 = Coupon.create!( description: '5R$ - Avengers',
 #                            expiration_date: Date.today + (1..100).to_a.sample,
