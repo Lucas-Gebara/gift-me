@@ -44,9 +44,13 @@ rappi = Company.create!( name: 'Rappi',
                             category: food
                             )
 
-# kinoplex = Company.create!( name: 'Kinoplex',
-#                             category: cinema
-#                             )
+kinoplex = Company.create!( name: 'Kinoplex',
+                            category: cinema
+                            )
+
+cinemark = Company.create!( name: 'Cinemark',
+                            category: cinema
+                            )
 
 puts "Creating coupons..."
 
