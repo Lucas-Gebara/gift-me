@@ -10,10 +10,10 @@
   <%= link_to 'Add a coupon', new_coupon_path, class: "btn btn-primary" %>
 
   <!-- Modal -->
-  <%= render 'coupons_imports/form', coupons_import: @coupons_import %>
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
+        <%= render 'coupons_imports/form', coupons_import: @coupons_import %>
       </div>
     </div>
   </div>
