@@ -1,4 +1,16 @@
-<%= simple_form_for coupons_import, html: { class: "transparent" } do |f| %>
- <%= f.input :companies, as: :check_boxes, collection: Company.all, include_hidden: false %>
+<%= simple_form_for coupons_import, html: { class: "" } do |f| %>
+  <%#= f.input :categories, as: :radio_buttons, collection: Category.all %>
+  <div class="isotope-categories">
+    <% Category.all.each do |category| %>
+      <label class="isotope-filter" data-filter="category-<%= category.slug %>" > <input type="radio" name="category"> <%= category.name %></label>
+    <% end %>
+  </div>
+
+  <%= f.input :companies, as: :check_boxes, collection: Company.all, include_hidden: false, :item_wrapper_class => 'transparent', :label => false %>
+  <div class="isotope-grid">
+    <% Company.all.each do |company| %>
+      <div class="isotope-item clickable-icon category-<%= company.category.slug %>" id="<%= company.slug %>"> <%= image_tag "#{company.slug}_logo.jpg", width: 50, height: 50%></div>
+    <% end %>
+  </div>
   <%= f.submit "Import", class: "btn btn-primary", id: "submit-icon"  %>
 <% end %>

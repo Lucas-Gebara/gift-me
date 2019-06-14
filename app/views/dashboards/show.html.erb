@@ -5,15 +5,10 @@
   </button>
 
   <!-- Modal -->
+  <%= render 'coupons_imports/form', coupons_import: @coupons_import %>
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <div class="row">
-           <div class="col-sm-4 clickable-icon" id="uber-eats"><%= image_tag "uber-eats_logo.jpg", width: 50, height: 50%></div>
-          <div class="col-sm-4 clickable-icon" id="ifood"><%= image_tag "ifood_logo.jpg", width: 50, height: 50%></div>
-           <div class="col-sm-4 clickable-icon" id="kinoplex"><%= image_tag "kinoplex_logo.jpg", width: 50, height: 50%></div>
-        </div>
-        <%= render 'coupons_imports/form', coupons_import: @coupons_import %>
       </div>
     </div>
   </div>

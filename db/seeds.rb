@@ -29,7 +29,6 @@ puts "Creating categories..."
 
 food = Category.create!( name: 'Food' )
 cinema = Category.create!( name: 'Cinema' )
-fashion = Category.create!( name: 'Fashion' )
 
 puts "Creating companies..."
 

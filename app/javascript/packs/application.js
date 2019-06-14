@@ -1,4 +1,6 @@
 import "bootstrap";
+import {sortableListInit} from "../components/sortable_list.js";
+
 const checkboxes = document.querySelectorAll(".form-check-input")
 // console.log(checkboxes)
 const bindIcon = (icon, index) => {
@@ -15,19 +17,13 @@ const bindIcon = (icon, index) => {
 })
 }
 
-
-
-
-
 let counter = 0
 
-
 console.log(document.querySelectorAll(".clickable-icons"))
-
-
 document.querySelectorAll(".clickable-icon").forEach((icon)=>{
     console.log("Hello")
     bindIcon(icon, counter);
     counter += 1;
 });
 
+sortableListInit();
