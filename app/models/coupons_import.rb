@@ -6,16 +6,17 @@ class CouponsImport
   validates :companies, :user, presence: true
 
   def save
-    @service = CouponsFakerService.new
+    @service = IgCouponService.new
     if valid?
       coupons = []
       companies.each do |company_id|
-        coupons << @service.import(company_id)
+        coupons << @service.import(company_id).map do |cp|
+          cp.user = user
+          cp.company_id = company_id
+          cp
+        end
       end
-      coupons.flatten.each do |cp|
-        cp.user = user
-        cp.save
-      end
+      coupons.flatten.each(&:save)
       true
     else
       false
