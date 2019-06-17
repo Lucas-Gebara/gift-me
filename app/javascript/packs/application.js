@@ -1,6 +1,6 @@
 import "bootstrap";
-import {sortableListInit} from "../components/sortable_list.js";
-import {disableLegend} from "../components/sortable_list.js";
+import {sortableListInit, disableLegend} from "../components/sortable_list.js";
+import {copyCode} from "../components/copy_clipboard.js"
 
 const checkboxes = document.querySelectorAll(".form-check-input")
 // console.log(checkboxes)
@@ -13,7 +13,7 @@ const bindIcon = (icon, index) => {
       event.currentTarget.style.border = "none"
     } else {
         checkbox.checked = true
-        event.currentTarget.style.border = "1px solid blue"
+        event.currentTarget.style.border = "1px solid gray"
     }
 })
 }
@@ -27,5 +27,17 @@ document.querySelectorAll(".clickable-icon").forEach((icon)=>{
     counter += 1;
 });
 
-sortableListInit();
+$('#exampleModal').on('shown.bs.modal', function (event) {
+  sortableListInit();
+})
+
+// $("#consent-checkbox").submit(function( event ) {
+//     event.preventDefault();
+
+// if($( consent-checkbox:checked )){
+//         $('#submit-icon').click();
+//     }
+// });
+
 disableLegend();
+copyCode();
