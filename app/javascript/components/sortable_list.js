@@ -13,9 +13,10 @@ const sortableListInit = () => {
     const filters = document.querySelectorAll('.isotope-filter');
     if(filters) {
       filters.forEach((filter) => {
-        filter.addEventListener("click", () => {
-          elem.style.display = "block";
-          iso.arrange({ filter: `.${filter.dataset.filter}` })
+        filter.addEventListener("change", (event) => {
+          // console.log(event)
+          // elem.style.display = "block";
+          iso.arrange({ filter: `${event.target.value}` })
         })
       })
     }
@@ -23,10 +24,9 @@ const sortableListInit = () => {
 }
 
 const disableLegend = () => {
- if(document.querySelector("#new_coupons_import").querySelector("legend")){
-  document.querySelector("#new_coupons_import").querySelector("legend").style.display = "none"
-}
+  if(document.querySelector("#new_coupons_import").querySelector("legend")){
+    document.querySelector("#new_coupons_import").querySelector("legend").style.display = "none"
+  }
 }
 
-export {disableLegend}
-export {sortableListInit}
+export {sortableListInit, disableLegend}

@@ -23,3 +23,6 @@ $border-radius-lg: 2px;
 $border-radius-sm: 2px;
 
 // Override other variables below!
+$input-btn-focus-width: .2rem;
+$input-focus-border-color: transparent;
+$input-focus-box-shadow: 0 0 0 $input-btn-focus-width #ddd;
