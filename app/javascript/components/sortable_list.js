@@ -20,13 +20,13 @@ const sortableListInit = () => {
       })
     }
   }
+  console.log("Fired init")
 }
 
 const disableLegend = () => {
- if(document.querySelector("#new_coupons_import").querySelector("legend")){
-  document.querySelector("#new_coupons_import").querySelector("legend").style.display = "none"
-}
+  if(document.querySelector("#new_coupons_import").querySelector("legend")){
+    document.querySelector("#new_coupons_import").querySelector("legend").style.display = "none"
+  }
 }
 
-export {disableLegend}
-export {sortableListInit}
+export {sortableListInit, disableLegend}
