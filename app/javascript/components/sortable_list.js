@@ -13,14 +13,14 @@ const sortableListInit = () => {
     const filters = document.querySelectorAll('.isotope-filter');
     if(filters) {
       filters.forEach((filter) => {
-        filter.addEventListener("click", () => {
-          elem.style.display = "block";
-          iso.arrange({ filter: `.${filter.dataset.filter}` })
+        filter.addEventListener("change", (event) => {
+          // console.log(event)
+          // elem.style.display = "block";
+          iso.arrange({ filter: `${event.target.value}` })
         })
       })
     }
   }
-  console.log("Fired init")
 }
 
 const disableLegend = () => {

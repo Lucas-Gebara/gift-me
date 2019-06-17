@@ -15,7 +15,15 @@
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
+        <div class="modal-header">
+        <h5 class="modal-title">Select the companies for their coupons</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
         <%= render 'coupons_imports/form', coupons_import: @coupons_import %>
+        </div>
       </div>
     </div>
   </div>
@@ -38,7 +46,12 @@
 
                 <h3><%= coupon.description %></h3>
                 <p>Expiration date: <%= coupon.expiration_date %></p>
-                <p>Code: <%= coupon.code %></p>
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control clipboard-box" aria-describedby="basic-addon1" value='<%= coupon.code %>' readonly>
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" id="copy-button" type="button">Copy code!</button>
+                  </div>
+                </div>
                 <%= link_to 'Use this Coupon', coupon.url, class: "btn btn-primary cursor" %>
               </div>
 
