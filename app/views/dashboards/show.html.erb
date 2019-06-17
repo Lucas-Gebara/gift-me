@@ -28,23 +28,29 @@
     </div>
   </div>
 
+
     <!-- Coupons display -->
+      <% if @user.coupons.empty? %>
 
-          <% @user.coupons.each do |coupon| %>
+        <p>You don't have any coupons</p>
 
-            <div class="gift-me-card">
-              <div class="text-center img-float">
-                <%= image_tag "#{coupon.company.slug}_logo.jpg", :class => 'company-logo'%>
+          <%= image_tag "import_coupons.jpg", :class => 'import_coupons'%>
 
+      <% else %>
 
-              </div>
-              <div>
+        <% @user.coupons.each do |coupon| %>
 
-                <%= link_to coupon_path(coupon),method: :delete, data: { confirm: "Are you sure?" } do  %>
-                  <%= image_tag "https://image.flaticon.com/icons/svg/63/63260.svg", class: 'trash-icon-logo' %>
-                <% end %>
+          <div class="gift-me-card">
+            <div class="text-center img-float">
+              <%= image_tag "#{coupon.company.slug}_logo.jpg", :class => 'company-logo'%>
+            </div>
 
-                <h3><%= coupon.description %></h3>
+            <div>
+              <%= link_to coupon_path(coupon),method: :delete, data: { confirm: "Are you sure?" } do  %>
+              <%= image_tag "https://image.flaticon.com/icons/svg/63/63260.svg", class: 'trash-icon-logo' %>
+              <% end %>
+
+              <h3><%= coupon.description %></h3>
                 <p>Expiration date: <%= coupon.expiration_date %></p>
                 <div class="input-group mb-3">
                   <input type="text" class="form-control clipboard-box" aria-describedby="basic-addon1" value='<%= coupon.code %>' readonly>
@@ -53,11 +59,15 @@
                   </div>
                 </div>
                 <%= link_to 'Use this Coupon', coupon.url, class: "btn btn-primary cursor" %>
-              </div>
-
             </div>
 
-          <% end %>
+          </div>
+
+        <% end %>
+
+      <% end %>
+
+  </div>
 </div>
 
 
