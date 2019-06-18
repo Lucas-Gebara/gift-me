@@ -16,6 +16,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
 gem 'httparty'
+gem 'pg_search'
 
 gem 'faker'
 

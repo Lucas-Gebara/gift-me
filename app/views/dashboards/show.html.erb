@@ -2,55 +2,62 @@
 <div class="container">
   <div class="text-center">
 
-  <h2>DASHBOARD</h2>
+    <h2>DASHBOARD</h2>
 
-  <%= link_to 'Import a coupon', new_coupons_import_path, class: "btn btn-primary" %>
+    <%= link_to 'Import a coupon', new_coupons_import_path, class: "btn btn-primary" %>
 
-  <%= link_to 'Add a coupon', new_coupon_path, class: "btn btn-primary" %>
-</div>
+    <%= link_to 'Add a coupon', new_coupon_path, class: "btn btn-primary" %>
+  </div>
   <!-- Modal -->
-
-
+  <div class="search-form">
+      <%= form_tag dashboard_path, method: :get do %>
+      <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+        placeholder: "Find a coupon"
+        %>
+        <% end %>
+    </div>
 
     <!-- Coupons display -->
-      <% if @user.coupons.empty? %>
+    <% if @coupons.empty? %>
 
-        <p></p>
+    <p></p>
 
-        <h3>You don't have any coupons</h3>
+    <h3>You don't have any coupons</h3>
 
-          <%= image_tag "import_coupons.jpg", :class => 'import_coupons'%>
+    <%= image_tag "import_coupons.jpg", :class => 'import_coupons'%>
 
-      <% else %>
+    <% else %>
 
-        <% @user.coupons.each do |coupon| %>
+    <% @coupons.each do |coupon| %>
 
-          <div class="gift-me-card">
-            <div class="text-center img-float">
-              <%= image_tag "#{coupon.company.slug}_logo.jpg", :class => 'company-logo'%>
-            </div>
+    <div class="gift-me-card">
+      <div class="text-center img-float">
+        <%= image_tag "#{coupon.company.slug}_logo.jpg", :class => 'company-logo'%>
+      </div>
 
-            <div>
-              <%= link_to coupon_path(coupon),method: :delete, data: { confirm: "Are you sure?" } do  %>
-              <%= image_tag "https://image.flaticon.com/icons/svg/63/63260.svg", class: 'trash-icon-logo' %>
-              <% end %>
-
-              <h3><%= coupon.description %></h3>
-                <p>Expiration date: <%= coupon.expiration_date %></p>
-                <div class="input-group mb-3">
-                  <input type="text" class="form-control clipboard-box" aria-describedby="basic-addon1" value='<%= coupon.code %>' readonly>
-                  <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" id="copy-button" type="button">Copy code!</button>
-                  </div>
-                </div>
-                <%= link_to 'Use this Coupon', coupon.url, class: "btn btn-primary cursor" %>
-            </div>
-
-          </div>
-
+      <div>
+        <%= link_to coupon_path(coupon),method: :delete, data: { confirm: "Are you sure?" } do  %>
+        <%= image_tag "https://image.flaticon.com/icons/svg/63/63260.svg", class: 'trash-icon-logo' %>
         <% end %>
 
-      <% end %>
+        <h3><%= coupon.description %></h3>
+        <p>Expiration date: <%= coupon.expiration_date %></p>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control clipboard-box" aria-describedby="basic-addon1" value='<%= coupon.code %>' readonly>
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" id="copy-button" type="button">Copy code!</button>
+          </div>
+        </div>
+        <%= link_to 'Use this Coupon', coupon.url, class: "btn btn-primary cursor" %>
+      </div>
+
+    </div>
+
+    <% end %>
+
+    <% end %>
 
   </div>
 </div>
