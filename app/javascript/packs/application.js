@@ -27,7 +27,13 @@ document.querySelectorAll(".clickable-icon").forEach((icon)=>{
     counter += 1;
 });
 
+
+
+
+if (document.querySelector('.isotope-grid') !== null) {
   sortableListInit();
+  disableLegend();
+}
 
 // $("#consent-checkbox").submit(function( event ) {
 //     event.preventDefault();
@@ -37,5 +43,4 @@ document.querySelectorAll(".clickable-icon").forEach((icon)=>{
 //     }
 // });
 
-disableLegend();
 copyCode();
