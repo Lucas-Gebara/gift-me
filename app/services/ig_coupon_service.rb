@@ -33,7 +33,7 @@ class IgCouponService
   COUPON_PATHS = {
     "ifood" => "cupom-desconto-ifood",
     "rappi" => "cupom-rappi",
-    "ubereats" => "cupom-uber-eats"
+    "uber-eats" => "cupom-uber-eats"
   }
   def import(company_id)
     company = Company.find(company_id)
