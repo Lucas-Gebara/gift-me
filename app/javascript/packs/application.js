@@ -27,9 +27,7 @@ document.querySelectorAll(".clickable-icon").forEach((icon)=>{
     counter += 1;
 });
 
-$('#exampleModal').on('shown.bs.modal', function (event) {
   sortableListInit();
-})
 
 // $("#consent-checkbox").submit(function( event ) {
 //     event.preventDefault();

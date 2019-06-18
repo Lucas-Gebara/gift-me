@@ -1,36 +1,21 @@
 <div class="container">
   <div class="text-center">
 
+  <%= link_to 'Import a coupon', new_coupons_import_path, class: "btn btn-primary" %>
 
-  <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary my-3" data-toggle="modal" data-target="#exampleModal">
-    Import coupons
-  </button>
 
   <%= link_to 'Add a coupon', new_coupon_path, class: "btn btn-primary my-3" %>
 </div>
   <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-        <h5 class="modal-title">Select the companies for their coupons</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        </div>
-        <div class="modal-body">
-        <%= render 'coupons_imports/form', coupons_import: @coupons_import %>
-        </div>
-      </div>
-    </div>
-  </div>
+
 
 
     <!-- Coupons display -->
       <% if @user.coupons.empty? %>
 
-        <p>You don't have any coupons</p>
+        <p></p>
+
+        <h3>You don't have any coupons</h3>
 
           <%= image_tag "import_coupons.jpg", :class => 'import_coupons'%>
 
