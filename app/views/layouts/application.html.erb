@@ -12,7 +12,7 @@
   <body>
     <% if user_signed_in? && (params[:controller] != "pages" && params[:action] != "home")%>
       <%= render "shared/navbar" %>
-      <%= render 'shared/flashes' %>
+      <%= render 'shared/flashes', success: flash[:success] %>
     <% end %>
 
     <%= yield %>
