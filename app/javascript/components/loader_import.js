@@ -1,13 +1,16 @@
 const loaderImport = () => {
-  const importButtonn = document.querySelectorAll("#submit-button")
+
+
+  if (document.querySelector("#submit-icon")) {
+    const importButton = document.querySelector("#submit-icon")
     importButton.addEventListener("click", (event) => {
-      const currentCopyButton = event.currentTarget;
-      const input = currentCopyButton.closest('.input-group').querySelector("input");
-      input.select();
-      document.execCommand("copy");
-      currentCopyButton.innerText ='Copied :)'
+      console.log("Event dispatched")
+      const loader = document.querySelector(".loader")
+      loader.style.display = "flex"
+      // look for the loader on the page
+      // add the active class to it
     });
-  });
+  }
 };
 
-export {copyCode}
+export {loaderImport}

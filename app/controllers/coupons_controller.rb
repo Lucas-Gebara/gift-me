@@ -10,7 +10,6 @@ class CouponsController < ApplicationController
     if @coupon.save
       redirect_to dashboard_path
     else
-      raise
       render :new
     end
   end

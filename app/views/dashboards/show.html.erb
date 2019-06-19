@@ -8,6 +8,15 @@
 </div>
   <!-- Modal -->
 
+  <div class="search-form">
+      <%= form_tag dashboard_path, method: :get do %>
+      <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+        placeholder: "Find a coupon"
+        %>
+        <% end %>
+    </div>
 
 
     <!-- Coupons display -->

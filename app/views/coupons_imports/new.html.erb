@@ -14,17 +14,10 @@
   </div>
 </div> -->
 
-
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-        <h5 class="modal-title">Select the companies for their coupons</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        </div>
-        <div class="modal-body">
-        <%= render 'form', coupons_import: @coupons_import %>
-        </div>
-      </div>
-    </div>
+<div class="container">
+  <div class="card p-3 m-3">
+    <h4>Import coupons</h4>
+    <p class="modal-title">Select the companies</p>
+    <%= render 'form', coupons_import: @coupons_import %>
+  </div>
+</div>
