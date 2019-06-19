@@ -17,7 +17,7 @@ class CouponsImport
           cp
         end
       end
-      @coupons.flatten.each(&:save)
+      @coupons.flatten!.each(&:save)
       true
     else
       false
