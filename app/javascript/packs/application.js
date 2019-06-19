@@ -1,6 +1,7 @@
 import "bootstrap";
 import {sortableListInit, disableLegend} from "../components/sortable_list.js";
 import {copyCode} from "../components/copy_clipboard.js"
+import {loaderImport} from "../components/loader_import.js"
 
 const checkboxes = document.querySelectorAll(".form-check-input")
 // console.log(checkboxes)
@@ -44,3 +45,4 @@ if (document.querySelector('.isotope-grid') !== null) {
 // });
 
 copyCode();
+loaderImport();
