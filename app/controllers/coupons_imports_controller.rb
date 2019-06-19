@@ -7,7 +7,7 @@ class CouponsImportsController < ApplicationController
     @coupons_import = CouponsImport.new(coupons_import_params)
     @coupons_import.user = current_user
     if @coupons_import.save
-      flash[:notice] = "You have imported #{view_context.pluralize(@coupons_import.coupons.count, 'coupon')}"
+      flash[:success] = "You have imported #{view_context.pluralize(@coupons_import.coupons.count, 'coupon')}"
       redirect_to dashboard_path
     else
       render :new
@@ -20,4 +20,3 @@ class CouponsImportsController < ApplicationController
     params.fetch(:coupons_import, {}).permit(companies: [])
   end
 end
-
