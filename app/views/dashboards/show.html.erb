@@ -1,13 +1,12 @@
-
 <div class="container">
   <div class="text-center">
 
-    <h2>DASHBOARD</h2>
+  <%= link_to 'Import a coupon', new_coupons_import_path, class: "btn btn-primary" %>
 
-    <%= link_to 'Import a coupon', new_coupons_import_path, class: "btn btn-primary" %>
 
-    <%= link_to 'Add a coupon', new_coupon_path, class: "btn btn-primary" %>
-  </div>
+  <%= link_to 'Add a coupon', new_coupon_path, class: "btn btn-primary my-3" %>
+</div>
+  
   <!-- Modal -->
   <div class="search-form">
       <%= form_tag dashboard_path, method: :get do %>
@@ -32,15 +31,27 @@
 
     <% @coupons.each do |coupon| %>
 
-    <div class="gift-me-card">
-      <div class="text-center img-float">
-        <%= image_tag "#{coupon.company.slug}_logo.jpg", :class => 'company-logo'%>
-      </div>
 
-      <div>
-        <%= link_to coupon_path(coupon),method: :delete, data: { confirm: "Are you sure?" } do  %>
-        <%= image_tag "https://image.flaticon.com/icons/svg/63/63260.svg", class: 'trash-icon-logo' %>
-        <% end %>
+          <div class="coupon coupon-grid">
+
+            <div class="coupon-left-wrapper">
+              <%= link_to '', coupon.url, class: 'coupon-left-action', style: "background-image: url(#{image_path("#{coupon.company.slug}_fullscreen.jpg")})" %>
+            </div>
+
+            <div class="coupon-content">
+              <%= link_to coupon_path(coupon),method: :delete, data: { confirm: "Are you sure?" }, class: "top-right-action" do  %>
+                Remove coupon
+              <% end %>
+
+              <h3><%= coupon.description %></h3>
+              <p> expires in <%= time_ago_in_words(coupon.expiration_date) %></p>
+              <div class="input-group">
+                <input type="text" class="form-control clipboard-box" aria-describedby="basic-addon1" value='<%= coupon.code %>' readonly>
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" id="copy-button" type="button">Copy code!</button>
+                </div>
+              </div>
+            </div>
 
         <h3><%= coupon.description %></h3>
         <p>Expiration date: <%= coupon.expiration_date %></p>
