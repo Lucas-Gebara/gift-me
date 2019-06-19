@@ -10,10 +10,10 @@ const bindIcon = (icon, index) => {
     let checkbox = checkboxes[index]
     if(checkbox.checked === true) {
       checkbox.checked = false
-      event.currentTarget.style.border = "none"
+      event.currentTarget.classList.remove('selected')
     } else {
         checkbox.checked = true
-        event.currentTarget.style.border = "1px solid gray"
+        event.currentTarget.classList.add('selected')
     }
 })
 }

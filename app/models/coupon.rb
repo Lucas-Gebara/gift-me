@@ -21,4 +21,15 @@ class Coupon < ApplicationRecord
       "http://www.cinemark.com.br"
     end
   end
+
+  include PgSearch
+  pg_search_scope :global_search,
+  against: [:description],
+  associated_against: {
+    category: [:name],
+    company: [:name]
+  },
+  using: {
+    tsearch: { prefix: true }
+  }
 end

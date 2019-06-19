@@ -12,9 +12,7 @@ const sortableListInit = () => {
 
       const filters = document.querySelectorAll('.isotope-filter');
     if(filters) {
-      console.log("hi")
       filters.forEach((filter) => {
-        console.log("hallo")
         filter.addEventListener("change", (event) => {
           // elem.style.display = "block";
           iso.arrange({ filter: `${event.target.value}` })
