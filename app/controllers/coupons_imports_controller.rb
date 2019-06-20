@@ -4,19 +4,37 @@ class CouponsImportsController < ApplicationController
   end
 
   def create
-    @coupons_import = CouponsImport.new(coupons_import_params)
-    @coupons_import.user = current_user
-    if @coupons_import.save
-      flash[:success] = "You have imported #{view_context.pluralize(@coupons_import.coupons.count, 'coupon')}"
+    if params[:import_type] == "email"
+      call_coupon_faker(coupons_import_params[:companies])
       redirect_to dashboard_path
     else
-      render :new
+      @coupons_import = CouponsImport.new(coupons_import_params)
+      @coupons_import.user = current_user
+      if @coupons_import.save
+         flash[:success] = "You have imported #{view_context.pluralize(@coupons_import.coupons.count, 'coupon')}"
+        redirect_to dashboard_path
+      else
+        render :new
+      end
     end
   end
 
   private
 
+  def call_coupon_faker(companies_ids)
+    @service = CouponsFakerService.new
+    coupons = []
+    companies_ids.each do |company_id|
+      coupons << @service.import(company_id)
+    end
+    coupons.flatten.each do |cp|
+      cp.user = current_user
+      cp.save
+    end
+  end
+
+
   def coupons_import_params
-    params.fetch(:coupons_import, {}).permit(companies: [])
+    params.fetch(:coupons_import, {}).permit(:import_type, companies: [])
   end
 end
