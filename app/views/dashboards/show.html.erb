@@ -32,9 +32,8 @@
 
       <% else %>
 
-        <% @coupons.each do |coupon| %>
-
-          <div class="coupon coupon-grid">
+        <% @coupons.each_with_index do |coupon, index| %>
+          <div class="coupon coupon-grid animation-fade-in animation-delay-<%= index + 1 %>">
 
             <div class="coupon-left-wrapper">
               <%= link_to '', coupon.url, class: 'coupon-left-action', style: "background-image: url(#{image_path("#{coupon.company.slug}_fullscreen.jpg")})" %>
