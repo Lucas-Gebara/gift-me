@@ -5,7 +5,7 @@ class IgCouponService
   def parse_coupons(path)
     doc = self.class.get("/#{path}")
     coupon_elements = Nokogiri::HTML(doc).search('.vouchers-list .igbr-new-voucher.secondary')
-    coupon_elements.map { |element| element.attr("id").gsub("item-", "") }
+    coupon_elements.map { |element| element.attr("id").gsub("item-", "") }.first(3)
   end
 
   def coupon(coupon_id)

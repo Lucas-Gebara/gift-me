@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: $primary;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -12,11 +12,17 @@
 }
 
 .title_name {
-  font-family: 'Righteous', cursive;
-  color: #FD1015;
+  font-family:  'Fredoka One', cursive;
+  color: #F5F5F5;
   font-size: 30px;
+  letter-spacing: 1px;
+  margin: 0px;
 }
 
 .align-right {
   text-align: right;
+}
+
+.nav-item a{
+  color: #F5F5F5;
 }
