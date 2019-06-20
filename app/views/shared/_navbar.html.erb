@@ -17,13 +17,13 @@
           <%= image_tag "profile_picture.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         </li>
         <li class="nav-item active">
-          <%= link_to "My profile", root_path, class: "nav-link" %>
+          <%= link_to "My profile", root_path, class: "nav-link nav-white", id:"white_font" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Dashboard", dashboard_path, class: "nav-link" %>
+          <%= link_to "Dashboard", dashboard_path, class: "nav-link", id:"white_font" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link", id:"white_font" %>
         </li>
 
       <% else %>
