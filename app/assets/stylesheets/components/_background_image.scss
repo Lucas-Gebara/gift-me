@@ -1,7 +1,10 @@
 .background-image {
-  height:100vh;
-  width: 100vw;
-  background-image: asset-url('landing_page_background.png');
-  background-size: cover;
+  background-image: asset-url('banner_background.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
+.limited-width {
+  width: 100%;
+  position: absolute;
+}
