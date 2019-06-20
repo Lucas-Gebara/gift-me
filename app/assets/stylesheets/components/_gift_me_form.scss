@@ -1,8 +1,6 @@
 .gift-me-form {
   background-color: white;
   padding: 20px;
-  border-radius: 20px;
-  box-shadow: 2px 2px 2px rgba(0,0,0,0.1);
   h2 {
     color: $primary;
     font-weight: bold;
@@ -25,6 +23,9 @@
 
 #submit-icon {
   display: block;
+  width: 100%;
+  margin-top: 10px;
+  font-weight: bold;
 }
 
 .isotope-item {
@@ -40,6 +41,7 @@
     max-width: 100%;
     width: auto;
     height: auto;
+    border-radius: 5px;
 
     opacity: 0.25;
     transform: translate(1px, 1px);
@@ -55,4 +57,11 @@
   }
 }
 
+.arrow-back {
+font-size: 30px;
+color: $light-gray;
+}
 
+.card-import {
+  margin-top: 10px;
+}
