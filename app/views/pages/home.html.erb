@@ -1,19 +1,17 @@
-
 <div class="background-image display-fullscreen">
+  <div class="row justify-content-center limited-width">
 
-  <div class="row justify-content-center">
-    <%= link_to new_user_session_path do%>
-      <%= image_tag "Framegiftme_logo.jpg", class: 'logo-signin'%>
-    <% end %>
-  </div>
-
-  <div class="row justify-content-center">
-
+    <div class="landing-page-list">
+      <ul>
+        <li>Keep track of all your discounts <i class="far fa-check-circle"></i></li>
+        <li>Have everything in one place <i class="far fa-check-circle"></i></li>
+        <li>Your own discount wallet <i class="far fa-check-circle"></i></li>
+      </ul>
+    </div>
 
     <div class="gift-me-btn">
       <%= link_to 'Sign in', new_user_session_path, class: "btn btn-primary" %>
     </div>
-
   </div>
 </div>
 
