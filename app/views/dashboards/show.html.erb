@@ -1,10 +1,10 @@
 <div class="container">
   <div class="text-center">
 
-  <%= link_to 'Import a coupon', new_coupons_import_path, class: "btn btn-primary" %>
+  <%= link_to 'Find coupons', new_coupons_import_path, class: "btn btn-primary" %>
 
 
-  <%= link_to 'Add a coupon', new_coupon_path, class: "btn btn-primary my-3" %>
+  <%= link_to 'Add coupon', new_coupon_path, class: "btn btn-primary my-3" %>
 
 </div>
   <!-- Modal -->
@@ -50,7 +50,7 @@
               <div class="input-group">
                 <input type="text" class="form-control clipboard-box" aria-describedby="basic-addon1" value='<%= coupon.code %>' readonly>
                 <div class="input-group-append">
-                  <button class="btn btn-outline-secondary" id="copy-button" type="button">Copy code!</button>
+                  <button class="btn btn-outline-secondary" id="copy-button" type="button">Copy</button>
                 </div>
               </div>
             </div>

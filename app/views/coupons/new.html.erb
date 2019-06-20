@@ -1,32 +1,31 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-xs-12 col-sm-4">
-      <div class="display-fullscreen">
-      <!-- Bootstrap grid -->
+        <!-- Bootstrap grid -->
 
         <div class="gift-me-form">
+         <a href="javascript:history.back()"><i class="fas fa-arrow-circle-left arrow-back"></i></a>
 
          <h1>New Coupon</h1>
 
          <%= simple_form_for [@coupon] do |f| %>
 
-           <%= f.input :description, label: 'Description of your code:' %>
+         <%= f.input :description, label: 'Description of your code:' %>
 
-           <%= f.association :company %>
+         <%= f.association :company %>
 
 
-           <%= f.input :code, label: 'Write here your code:' %>
-           <%= f.input :expiration_date, label: 'When does your code expire?', html5: true, as: :date%>
+         <%= f.input :code, label: 'Write here your code:' %>
+         <%= f.input :expiration_date, label: 'When does your code expire?', html5: true, as: :date%>
 
-           <%= f.submit "Create a new coupon", class: "btn btn-primary" %>
+         <%= f.submit "Create a new coupon", class: "btn btn-primary" %>
          <% end %>
 
-        </div>
+       </div>
 
-      <!-- End of bootstrap grid -->
-      </div>
-    </div>
-  </div>
+       <!-- End of bootstrap grid -->
+   </div>
+ </div>
 </div>
 
 

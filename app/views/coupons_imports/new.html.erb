@@ -15,9 +15,12 @@
 </div> -->
 
 <div class="container">
-  <div class="card p-3 m-3">
-    <h4>Import coupons</h4>
-    <p class="modal-title">Select the companies</p>
-    <%= render 'form', coupons_import: @coupons_import %>
+  <div class="row justify-content-center">
+    <div class="col-xs-12 col-sm-4 card-import">
+      <a href="javascript:history.back()"><i class="fas fa-arrow-circle-left arrow-back"></i></a>
+      <h1>Find coupons</h1>
+      <%= render 'form', coupons_import: @coupons_import %>
+    </div>
   </div>
+</div>
 </div>

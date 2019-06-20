@@ -4,7 +4,7 @@
 
 <div class="isotope-categories" >
  <select class="custom-select mr-sm-2 isotope-filter" id="inlineFormCustomSelect" placeholder="Category">
-  <label> <option name="category" value="*">All</option></label>
+  <label> <option name="category" value="*">Select Category</option></label>
   <% Category.all.each_with_index do |category, index| %>
     <label data-filter="category-<%= category.slug %>" > <option value=".category-<%= category.slug %>" name="category"> <%= category.name %> </option></label>
   <% end %>
@@ -24,11 +24,10 @@
 
 </div>
 
-<div class="my-3">
-  <input type="radio" name="import_type" value="email" checked> from email<br>
-  <input type="radio" name="import_type" value="web"> from the web<br>
+<div class="import-source my-3">
+  <input type="radio" name="import_type" value="email" checked> search from email<br>
+  <input type="radio" name="import_type" value="web"> search from web<br>
 </div>
-
 
 
 <%= f.submit "Import", class: "btn btn-primary", id: "submit-icon"  %>
