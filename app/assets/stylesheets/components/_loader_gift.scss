@@ -1,5 +1,5 @@
 .loader {
-  background: rgba(170,0, 0, 0.3);
+  background: transparentize($primary, 0.5);
   position: fixed;
   top: 0;
   left: 0;
@@ -11,4 +11,26 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+$base-delay: 0.4s;
+
+.animation-fade-in {
+  animation-name: fade-in;
+  animation-timing-function: ease-in;
+  animation-duration: $base-delay;
+  animation-delay: $base-delay * 1;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+.animation-delay-2 { animation-delay: $base-delay * 2; }
+.animation-delay-3 { animation-delay: $base-delay * 3; }
+.animation-delay-4 { animation-delay: $base-delay * 4; }
+.animation-delay-5 { animation-delay: $base-delay * 4; }
+.animation-delay-6 { animation-delay: $base-delay * 4; }
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
