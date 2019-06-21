@@ -1,10 +1,13 @@
 .landing-page-list {
   color: $primary;
   text-align: center;
-  font-size: 18px;
+  font-size: 16px;
   margin-top: 30px;
-  position: relative;
-  top: 100px;
+  ul {
+    margin-bottom: 0px;
+    margin-top: 250px;
+    padding-left: 0px;
+  }
   li {
     list-style: none;
     margin-top: 30px;
