@@ -1,10 +1,10 @@
 <div class="container">
   <div class="text-center">
 
-  <%= link_to 'Find coupons', new_coupons_import_path, class: "btn btn-primary" %>
+  <%= link_to 'Find coupons', new_coupons_import_path, class: "btn btn-primary my-3 dashboard-button" %>
 
 
-  <%= link_to 'Add coupon', new_coupon_path, class: "btn btn-primary my-3" %>
+  <%= link_to 'Add coupon', new_coupon_path, class: "btn btn-primary my-3 dashboard-button" %>
 
 </div>
   <!-- Modal -->
@@ -14,7 +14,7 @@
       <%= text_field_tag :query,
       params[:query],
       class: "form-control",
-        placeholder: "Find a coupon"
+        placeholder: "Search coupons"
         %>
         <% end %>
     </div>
